@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -170,6 +172,60 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
     <Compile Include="Areas\Client\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Client\Models\BAIDANG.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\CHUNGTU.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\CT_BAIDANG.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\CT_DONHANG.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\DANHMUC.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\DONHANGBAN.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\DONHANGMUA.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\ECModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ECModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\ECModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\ECModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ECModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\PHANLOAI.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\QUAN.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\sysdiagram.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Client\Models\TAIKHOAN.cs">
+      <DependentUpon>ECModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -183,6 +239,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Client\Models\ECModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ECModel.edmx</DependentUpon>
+      <LastGenOutput>ECModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Client\Models\ECModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ECModel.edmx</DependentUpon>
+      <LastGenOutput>ECModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -200,6 +266,13 @@
     <Content Include="Areas\Client\Views\Home\Checkout.cshtml" />
     <Content Include="Areas\Client\Views\Home\Contact.cshtml" />
     <Content Include="Areas\Client\Views\Home\Cart.cshtml" />
+    <EntityDeploy Include="Areas\Client\Models\ECModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ECModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\Client\Models\ECModel.edmx.diagram">
+      <DependentUpon>ECModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -252,7 +325,6 @@
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Client\Models\" />
     <Folder Include="Areas\Client\Views\Shared\" />
     <Folder Include="Asset\css\" />
     <Folder Include="Asset\fonts\" />
@@ -266,6 +338,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

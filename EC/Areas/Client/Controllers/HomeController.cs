@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EC.Areas.Client.Models;
 
 namespace EC.Areas.Client.Controllers
 {
     public class HomeController : Controller
     {
+        EC_Entities db = new EC_Entities();
         // GET: Client/Home
         public ActionResult Index()
         {
@@ -23,6 +25,7 @@ namespace EC.Areas.Client.Controllers
         }
         public ActionResult Login()
         {
+
             return View();
         }
         public ActionResult Contact()
