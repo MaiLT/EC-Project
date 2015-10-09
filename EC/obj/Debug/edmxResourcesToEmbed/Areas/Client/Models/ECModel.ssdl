@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ECModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BAIDANG">
+    <Key>
+      <PropertyRef Name="MaBaiDang" />
+    </Key>
+    <Property Name="MaBaiDang" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTaiKhoan" Type="int" Nullable="false" />
+    <Property Name="NgayDang" Type="datetime" Nullable="false" />
+    <Property Name="TenSanPham" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DonGia" Type="int" Nullable="false" />
+    <Property Name="MoTa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HinhAnh" Type="image" Nullable="false" />
+    <Property Name="MaPhanLoai" Type="int" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CT_BAIDANG">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaBaiDang" Type="int" Nullable="false" />
+    <Property Name="MauSac" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="KichThuoc" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaCT" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CT_DONHANG">
+    <Key>
+      <PropertyRef Name="MaCTDonHang" />
+    </Key>
+    <Property Name="MaDonHangMua" Type="int" Nullable="false" />
+    <Property Name="MaCTDonHang" Type="int" Nullable="false" />
+    <Property Name="MaTaiKhoanBan" Type="int" Nullable="false" />
+    <Property Name="MaBaiDang" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="MauSac" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="KichThuoc" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHUNGTU">
+    <Key>
+      <PropertyRef Name="MaChungTu" />
+    </Key>
+    <Property Name="MaChungTu" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaTaiKhoan" Type="int" Nullable="false" />
+    <Property Name="NgayLap" Type="datetime" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+    <Property Name="SoBaiDang" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DANHMUC">
+    <Key>
+      <PropertyRef Name="MaDanhMuc" />
+    </Key>
+    <Property Name="MaDanhMuc" Type="int" Nullable="false" />
+    <Property Name="TenDanhMuc" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DONHANGBAN">
+    <Key>
+      <PropertyRef Name="MaDonHangBan" />
+    </Key>
+    <Property Name="MaDonHangBan" Type="int" Nullable="false" />
+    <Property Name="MaDonHangMua" Type="int" Nullable="false" />
+    <Property Name="MaTaiKhoanBan" Type="int" Nullable="false" />
+    <Property Name="MaTaiKhoanMua" Type="int" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DONHANGMUA">
+    <Key>
+      <PropertyRef Name="MaDonHangMua" />
+    </Key>
+    <Property Name="MaDonHangMua" Type="int" Nullable="false" />
+    <Property Name="MaTaiKhoanMua" Type="int" Nullable="false" />
+    <Property Name="NgayMua" Type="datetime" Nullable="false" />
+    <Property Name="TongTien" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHANLOAI">
+    <Key>
+      <PropertyRef Name="MaPhanLoai" />
+    </Key>
+    <Property Name="MaPhanLoai" Type="int" Nullable="false" />
+    <Property Name="TenPhanLoai" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="MaDanhMuc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QUAN">
+    <Key>
+      <PropertyRef Name="Ten" />
+    </Key>
+    <Property Name="Ten" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenNguoiDung" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quyen" Type="int" Nullable="false" />
+    <Property Name="SDT" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SoBaiDang" Type="int" />
+    <Property Name="Quan" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BAIDANG_PHANLOAI">
+    <End Role="PHANLOAI" Type="Self.PHANLOAI" Multiplicity="1" />
+    <End Role="BAIDANG" Type="Self.BAIDANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHANLOAI">
+        <PropertyRef Name="MaPhanLoai" />
+      </Principal>
+      <Dependent Role="BAIDANG">
+        <PropertyRef Name="MaPhanLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BAIDANG_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="BAIDANG" Type="Self.BAIDANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="BAIDANG">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_BAIDANG_BAIDANG">
+    <End Role="BAIDANG" Type="Self.BAIDANG" Multiplicity="1" />
+    <End Role="CT_BAIDANG" Type="Self.CT_BAIDANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAIDANG">
+        <PropertyRef Name="MaBaiDang" />
+      </Principal>
+      <Dependent Role="CT_BAIDANG">
+        <PropertyRef Name="MaBaiDang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_DONHANG_BAIDANG">
+    <End Role="BAIDANG" Type="Self.BAIDANG" Multiplicity="1" />
+    <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAIDANG">
+        <PropertyRef Name="MaBaiDang" />
+      </Principal>
+      <Dependent Role="CT_DONHANG">
+        <PropertyRef Name="MaBaiDang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_DONHANG_DONHANGMUA">
+    <End Role="DONHANGMUA" Type="Self.DONHANGMUA" Multiplicity="1" />
+    <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONHANGMUA">
+        <PropertyRef Name="MaDonHangMua" />
+      </Principal>
+      <Dependent Role="CT_DONHANG">
+        <PropertyRef Name="MaDonHangMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_DONHANG_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="CT_DONHANG">
+        <PropertyRef Name="MaTaiKhoanBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUNGTU_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="CHUNGTU" Type="Self.CHUNGTU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="CHUNGTU">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANGBAN_DONHANGMUA">
+    <End Role="DONHANGMUA" Type="Self.DONHANGMUA" Multiplicity="1" />
+    <End Role="DONHANGBAN" Type="Self.DONHANGBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONHANGMUA">
+        <PropertyRef Name="MaDonHangMua" />
+      </Principal>
+      <Dependent Role="DONHANGBAN">
+        <PropertyRef Name="MaDonHangMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANGBAN_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="DONHANGBAN" Type="Self.DONHANGBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DONHANGBAN">
+        <PropertyRef Name="MaTaiKhoanBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANGBAN_TAIKHOAN1">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="DONHANGBAN" Type="Self.DONHANGBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DONHANGBAN">
+        <PropertyRef Name="MaTaiKhoanMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONHANGMUA_TAIKHOAN">
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="1" />
+    <End Role="DONHANGMUA" Type="Self.DONHANGMUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TAIKHOAN">
+        <PropertyRef Name="MaTaiKhoan" />
+      </Principal>
+      <Dependent Role="DONHANGMUA">
+        <PropertyRef Name="MaTaiKhoanMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHANLOAI_DANHMUC">
+    <End Role="DANHMUC" Type="Self.DANHMUC" Multiplicity="1" />
+    <End Role="PHANLOAI" Type="Self.PHANLOAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANHMUC">
+        <PropertyRef Name="MaDanhMuc" />
+      </Principal>
+      <Dependent Role="PHANLOAI">
+        <PropertyRef Name="MaDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ECModelStoreContainer">
+    <EntitySet Name="BAIDANG" EntityType="Self.BAIDANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_BAIDANG" EntityType="Self.CT_BAIDANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_DONHANG" EntityType="Self.CT_DONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHUNGTU" EntityType="Self.CHUNGTU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DANHMUC" EntityType="Self.DANHMUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONHANGBAN" EntityType="Self.DONHANGBAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DONHANGMUA" EntityType="Self.DONHANGMUA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHANLOAI" EntityType="Self.PHANLOAI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUAN" EntityType="Self.QUAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BAIDANG_PHANLOAI" Association="Self.FK_BAIDANG_PHANLOAI">
+      <End Role="PHANLOAI" EntitySet="PHANLOAI" />
+      <End Role="BAIDANG" EntitySet="BAIDANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BAIDANG_TAIKHOAN" Association="Self.FK_BAIDANG_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="BAIDANG" EntitySet="BAIDANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_BAIDANG_BAIDANG" Association="Self.FK_CT_BAIDANG_BAIDANG">
+      <End Role="BAIDANG" EntitySet="BAIDANG" />
+      <End Role="CT_BAIDANG" EntitySet="CT_BAIDANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_DONHANG_BAIDANG" Association="Self.FK_CT_DONHANG_BAIDANG">
+      <End Role="BAIDANG" EntitySet="BAIDANG" />
+      <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_DONHANG_DONHANGMUA" Association="Self.FK_CT_DONHANG_DONHANGMUA">
+      <End Role="DONHANGMUA" EntitySet="DONHANGMUA" />
+      <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_DONHANG_TAIKHOAN" Association="Self.FK_CT_DONHANG_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNGTU_TAIKHOAN" Association="Self.FK_CHUNGTU_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="CHUNGTU" EntitySet="CHUNGTU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANGBAN_DONHANGMUA" Association="Self.FK_DONHANGBAN_DONHANGMUA">
+      <End Role="DONHANGMUA" EntitySet="DONHANGMUA" />
+      <End Role="DONHANGBAN" EntitySet="DONHANGBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANGBAN_TAIKHOAN" Association="Self.FK_DONHANGBAN_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="DONHANGBAN" EntitySet="DONHANGBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANGBAN_TAIKHOAN1" Association="Self.FK_DONHANGBAN_TAIKHOAN1">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="DONHANGBAN" EntitySet="DONHANGBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONHANGMUA_TAIKHOAN" Association="Self.FK_DONHANGMUA_TAIKHOAN">
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+      <End Role="DONHANGMUA" EntitySet="DONHANGMUA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHANLOAI_DANHMUC" Association="Self.FK_PHANLOAI_DANHMUC">
+      <End Role="DANHMUC" EntitySet="DANHMUC" />
+      <End Role="PHANLOAI" EntitySet="PHANLOAI" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

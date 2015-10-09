@@ -13,7 +13,8 @@ namespace EC.Areas.Client.Controllers
         // GET: Client/Home
         public ActionResult Index()
         {
-            return View();
+            var baidang = db.BAIDANGs.Take(4).ToList();
+            return View(baidang);
         }
         public ActionResult Product()
         {
